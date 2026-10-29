@@ -29,7 +29,8 @@ commands:
   cursors         warn about Cursor values with no entry in crates/tools/src/cursors.toml (never fails)
   i18n-report     list the strings each language's catalog lacks, shown in English (fails only on a
                   broken scan; ci runs it too)
-  pdf-deps        verify immutable shared PDF writer and patched Krilla sources
+  pdf-deps        verify immutable shared PDF writer and patched Krilla sources (CRAFT_LIBS_GIT and
+                  CRAFT_LIBS_REV name a fork of craft-libs instead; see docs/pdf-backend.md)
   layers          enforce the crate dependency layering (plan/architecture.md §3)
   wasm            cargo check --target wasm32-unknown-unknown for the wasm-safe crates and the web app
   test            the workspace tests (cargo nextest when installed, else cargo test), then the doctests
