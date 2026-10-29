@@ -54,7 +54,9 @@ is known-incomplete rejection rather than a general PDF validity certificate.
 The five patched Hayro crates and Krilla are selected in the root `[patch.crates-io]`
 from the same immutable revision as `craft-pdf`. `cargo xtask pdf-deps` rejects missing,
 duplicate, local-path, registry and mismatched revisions for those seven packages.
-`craft-print`, `craft-ui` and the other craft-libs crates use the same revision.
+`craft-print`, `craft-ui` and the other craft-libs crates use the same revision. A build
+against a fork of craft-libs sets `CRAFT_LIBS_GIT` to the fork's URL, as Cargo.lock records
+it, and `CRAFT_LIBS_REV` to its full commit hash, and the check then requires that source.
 
 Dependency asset hashes and sources are in `ASSETS.md`; redistributed license texts are
 in `licenses/pdf-backend`. Package staging carries those texts together with `NOTICE`
